@@ -1,0 +1,39 @@
+# git
+research skill in github
+	awesome XXX
+	XXX sample
+	XXX starter / xxx boilerplate, this is for empty framework
+	xxx tutorial
+
+how to find an opensource project
+	https://github.com/trending/
+	https://github.com/521xueweihan/HelloGitHub
+
+mkdir a new folder, then use git init; otherwise, use git clone
+
+git config --global user.name xueyanlu  (only for record, you can put any name)
+git config --global user.email fake@gmail.com
+git add go.py
+git commit -m "1st function done"
+edit go.py but don't like it and want to convert to the version at the commit, then:
+git checkout HEAD go.py
+git add go2.py
+git commit -m "2nd function done"
+git reset --hard XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX(commit_id) (convert to the specific version and clear all codes after that version in local repository)
+git remote add origin https://github.com/emmahello/um.git (tell the local repository where the codes are uploaded to)
+git push -u origin main
+
+git clone https://username@github.com/username/repository.git
+git clone https://username:password@github.com/username/repository.git
+git clone https://emmahello:Vangogh5%@github.com/emmahello/um.git
+
+update remote URL:
+git remote set-url origin <https://github.com/username/repository.git>
+
+workspace  ---add---> staging area ---commit---> local repository  ---push--->remote repository
+https://www.runoob.com/git/git-basic-operations.html
+
+
+ssh-keygen -t ed25519 -C "emmalu879@gmail.com" (at the local PC terminal)
+cat /Users/xueyanlu/.ssh/id_ed25519
+copy the ssh key into github.com
