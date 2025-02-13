@@ -1,31 +1,5 @@
 021325
-Hi Dr. Takita, Xueyan Lu from dosimetry. WOuld you please re-approve the plan for GLORIA VELASQUEZ. 
-Would you re-approve the plan? I'm sorry I didn't put a proper tracking point for QA. The plan is the same.
-I see you in and out.
-It (new Tx) starts at 2 pm. I just make sure you got my email.
-give me an estimate??? I can talk to him
-Please disregard last email.
-In Annia’s absence I will be handling this case. 
-This request is very time sensitive.
-There are two plans ready for review. However, if you prefer to evaluate the sum prior to approval I have sent both plans to MIM so physics can generate a plan sum. I already dropped a task for them and cc'd them on this email.
-From what I can see, Hayden and James are working on this patient. Adding them to the thread so they can provide updates.
-The family is doing their effort on their side to expedite the process
-Ask MD: The prostate is pushed up to the bladder. ... Is there any reason for that?
-The second plan for one more fx retreat is 'L CW retreatment' since the patient is still in pain. 800cGy/fx * 1 fx = 800cGy.
-This is Lu. I'm calling from University of Miami to request records for a patient that will be treated here. We have the physician-to-physician request form. 
-...Can you please let me know what the process is? Dr. Ramon F. Arguelles.The patient's name is Llanes Capote, Isabel (24055275). Last name is Capote. DOB 11/5/1951
-.. from Palmetto General? She got Radiation to the left upper lung in 2020. 
-...Provider to Provider Release of Information for Treatment Purposes
-...medical release form with the patient's signature
-I faxed two documents to you yesterday. Did you receive my fax?
-This is Lu. I'm calling from University of Miami to request records for a patient that will be treated here. I faxed two request forms on last Monday. Is there any update from the physics team? 
-..Just double check the physics team is too busy to email me or they email to a wrong address
-FRANCIS.SIMAC@USA.GENESISCARE.COM
-Good morning Dr. Freret,
-I hope you're doing well. I was wondering when you were planning to start this patient. I know you said you were going to request another MRI. I just wanted to know because I'm going to be off most of next week and I don't want anything to fall through the cracks. Please let me know. 
-I've just sent you an invite via Box with the DICOM records requested. Let me know if you have any issues or if anything else is needed. Thanks!
-If they tell you that the form is enough, then ask for the fax number. If not, just follow what they tell you to do. 
-Per Dr. Taswell, I was advised to re-simulate the patient to get replanned. 
+
 
 UH-43D81V3 main
 UH-2KVMYS3 west
@@ -105,9 +79,8 @@ QGenda
 	MD: https://app.qgenda.com/Link/view?linkKey=84ae4a74-d1f6-4d68-9c20-94944b260e72
 	Physicists: https://app.qgenda.com/Link/view?linkKey=2a3f600a-7240-4f64-ba87-4387486c6e61
 Schedule: as long as there is one dsmt covering untill 5 pm
----------------------------------------------------------------------------------------
----------------------------------------case examples-------------------------------
----------------------------------------------------------------------------------------
+
+# case examples
 CSI photon: BOODOO, SUNITE 22599251
 HN w boost: RIOS MORA, LUIS 23922917
 SRS: DE OLIVEIRA MARCIERI, BEATRIZ 23471221
@@ -115,11 +88,10 @@ HN with jaw half open: GONZALEZ, MANUEL 10139847
 Different isocenter for different field and SSD setup, 3D, large volume in Edge: TEAGUE, LEIDY 24019827
 Breast w electron boost:  PORTER, NELLIE 9253435
 Prostate w LN 86/80/56: MANSO, JOSE 8587020
+Prostate w LN 86/80/72/68/56 in Edge w two isocenters, using autocrop : BORDON FUNDORA, ROBERTO 20254084
+# case examples
 
-
----------------------------------------------------------------------------------------
----------------------------------------meeting-------------------------------
----------------------------------------------------------------------------------------
+# meeting 
 Proton: Jonathan, Boris, Hayden
 West/Ethos: Rene, John B, Lu
 Main: William, Karen, Katherine, Ricky
@@ -128,10 +100,9 @@ DFB: Mike and Andrew
 WEST inpatient stay at west if < 10 fractions (for replan cases)
 Plantation 2 dosimetrists April 14 2025
 Sole Mia 3 dosimetrists June 17 2025
+# meeting
 
----------------------------------------------------------------------------------------
----------------------------------------Learn from Others-------------------------------
----------------------------------------------------------------------------------------
+# Learn from Others
 MRN: 23655765 VMAT Ethos by Rene
 Breast w LN, PTV4800, PTV4256, SIM Tx, DIBH
 01_CW_ARC 181 CW 50, 02_CCW_ARC 50 CCW 181, ...
@@ -242,9 +213,29 @@ electron vs photon
 MRN: 23975359
 The conformality index was the same with new photon plan/electron plan (CI is 1.35). There was more lung/heart dose with electrons, despite slightly higher normal breast with photon new plan, we approved the new photon plan.
 BTW, electron uses 12E.
----------------------------------------------------------------------------------------
----------------------------------------Case Study ---------------------------------------
----------------------------------------------------------------------------------------
+# Learn from Others
+# case study
+Prostate w LN 86/80/72/68/56 in Edge w two isocenters, using autocrop : BORDON FUNDORA, ROBERTO 20254084
+One plan with two isocenters:
+	1_CBCT, 1_ARC_1, 1_ARC_2, covering the superior part of PTVs
+	2_CBCT, 2_ARC_1, 2_ARC_2, covering the inferior part of PTVs
+	Dose pr Fx: 215, Num Fx: 40, Total Dose: 8600, Target: GTV8600_BOOST, Primary Ref Point: GTV8600_BOOST, Plan Normalization Val: 100.10% (which equals to 100%-95%)
+	Reference points: PTV5600_1, PTV5600_2, PTV6800_1, PTV6800_2, PTV7200, PTV8000, GTV8600_BOOST, RC
+	
+1. Plan_Sup
+	1_CBCT, 1_ARC_1, 1_ARC_2, covering the superior part of PTVs
+	Dose pr Fx: 180, Num Fx: 40, Total Dose: 7200, Target: PTV7200, Primary Ref Point: PTV7200, Plan Normalization Val: 83.8%
+	Reference points: PTV5600_1, PTV7200, RC_Sup
+2. Plan_Inf
+	2_CBCT, 2_ARC_1, 2_ARC_2, covering the inferior part of PTVs
+	Dose pr Fx: 215, Num Fx: 40, Total Dose: 8600, Target: GTV8600_BOOST, Primary Ref Point: GTV8600_BOOST, Plan Normalization Val: 100.10%
+	Reference points: PTV5600_2, PTV6800_1, PTV6800_2, PTV8000, GTV8600_BOOST, RC_Inf
+3. Plan_Sum
+Report: two RadCalc reports, one Treatment plan of Plan Sum (need check Plan_Sup and Plan_Inf in the report)
+# case study
+
+
+# Case Study
 1350 cGy * 1 fx case is sent to MD to review, he thinks the 50% ISL is not safe, so he change it to 2500 cGy in 5 fx.
 3D plan is too hot (128%), Karen changed the prescription from 95% - 100 % to 95% to 95 %, and mentioned it in the review email to MD.
 Large MU duty cycle:
@@ -289,10 +280,10 @@ Field X size for large volumes
 			same
 		insert a plan sum and ask MD to approve it.
 
+ProstateLN
+# Case Study
 
----------------------------------------------------------------------------------------
---------------------------------------- w Boost ---------------------------------------
---------------------------------------------------------------------------------------
+# w Boost
 Ethos:
 Add two phases when print the initial plan:
 	Total				Phase 1				Phase 2
@@ -325,31 +316,27 @@ ClearCheck template:
 Plan Sum report
 	Plan: Plan Sum
 	Constraint Template: Breast L and Breast Boost
+# w Boost
 
 
-
----------------------------------------------------------------------------------------
---------------------------------------- multiple lesions ---------------------------------------
---------------------------------------------------------------------------------------
+# multiple lesions
 MRN: THOMAS, SHIRLEY 8019910
 One lesion, one plan, one course. Don't put multiple plans in one course because if the patient treats one lesion only one day, then you need to do a lot of works.
 Course: C1A_Humerus_R, C1B_Femur_L
 make sure therapists not forgetting any of plans to treat:
 	create Alert: Summary - New under Patient Alerts - add 'two plans in total' - OK, therapists will get alerts every treatment
 	Setup notes: Add 'two plans in total'
+# multiple lesions
 
----------------------------------------------------------------------------------------
---------------------------------------- 3D whole brain ---------------------------------------
---------------------------------------------------------------------------------------
+# 3D whole brain
 May need to edit fluence to reduce lens dose, to keep it max < 7 Gy. Using Decrease Transmission Factor (brush size 0.4 cm, Transmission Factor 0.3)
+# 3D whole brain
 
----------------------------------------------------------------------------------------
---------------------------------------- 与PET blend看enhancement ---------------------------------------
---------------------------------------------------------------------------------------
+# 与PET blend看enhancement
 Pt - View - View Parameter - hot iron - Save
 File - open - plan - click CTSim - click Registered Images - rc PET images - Blend with CTSim
 usually check volumes for SBRT lung and conventional HN cases before you plan.
-
+# 与PET blend看enhancement
 ---------------------------------------------------------------------------------------
 --------------------------------------- Tips ---------------------------------------
 --------------------------------------------------------------------------------------
@@ -364,7 +351,7 @@ OAR max<=2500cGy is not met, change it to V2500cGy<=0.03cc.
 PTV max<=110% is not met, change it to D0.01<=3300cGy??
 
 
---------MD--------
+# MD
 Dr. Mellon: very thorough, communicate well, love SBRT. MIM only.
 Dr. Portlance: could be many mistakes due to many residents. Ask other dosimetrists if you found mistakes, better not ask MD at first
 Dr. Azzam: very nice, respond to text quickly
@@ -378,8 +365,9 @@ Dr. Takita prefers good PTV conformility, eg. tight 100% IDL. Doesn't like a 3D 
 Dr. Reveda prefers high coverage as long as OAR is fine.
 Dr. Yechieli: when you plan Dr. Yechieli, you are the Doctor.
 Dr. Spieler perfers 50%IDL irradiates bladder ALARA, 33%IDL irradiates rectum ALARA. Carina is best for upper and mid lung cases.
+# MD
 
---------Device----
+# Device
 Main Linac A - Triology: Exact Couch with flat panel, rails out; 	6x, 23x;		max FOV is 40 cm
 Main Linac B: IGRT, medium (thick for pelvic), 		6x, 10x, 23x		
 	Main Imaging Device CT49408
@@ -399,6 +387,7 @@ surface guided imaging device
 		non-SRS DIBH: BODY_FB
 	Main: osms
 
+
 --------Doral---------
 Therapist Martinez, Rene phone: 20150
 Since the simulation CT machine has more bits (16 bits) than other CT machines (12 bits), HU could overflow in electron density curve. If got an error during calculation, then in Contouring, 
@@ -407,9 +396,59 @@ Since the simulation CT machine has more bits (16 bits) than other CT machines (
 Identify
 	Some of the server are not talking to our Identify server. You can check you citrix connection center, UH01VARNCTXP01-05 usually works. Others usually doesn’t. This is not because of any connection issue, but just these servers need to reboot.
 
---------English---
+-----ethos------
+use KVCBCT setup fields only, no other setup fields
+no C1_PD course, ethos print will include QA parts
+3D Ezfluence cases only: rc MLC - Remove Flattening Sequence, to make the beam as regular FFF curve shape PDD, otherwise it will be flat beams. It applies only 3D+Ezfluence+ethos cases.
+move isocenter to avoid couch collision, give a 1 cm at least margin off the couch (from the red circle)
+Y axis should <= +-6cm ???
+Couch shift limitation
+	•	For Halcyon, move the user origin closer to the treatment isocenter in the Treatment Planning System to reduce the Delta Couch Shift longitudinal value so that the Load button becomes available
+	•	The planned longitudinal Delta Couch Shift cannot exceed: 
+		o	-17.00cm (moves the couch away from the bore)
+		o	OR
+		o	+30.00cm (moves the couch further into bore) 
+		o	These limits are documented in the Halcyon and Ethos Radiotherapy System Customer Release Note
+	•	For Ethos, move the Simulation Isocenter in the Technical Structures to be within 17cm of the planned isocenter
+	example:
+		one lesion in superior: Y=-5cm; the other lesion in inferior: Y=-52cm. User origin: Y=-10cm
+		Create a new structure named Virtual_Iso_shift: put is at Y=22cm, use brush (2 cm thick, check 3D) to contour one dot in one slice.
+		Setup notes: use virtual_iso_shift as a user origin
+		Ethos report: create an OAR structure virtual_iso_shift and link it.
+		Simulation Isocenter - Edit - click square-arrow - choose virtual_iso_shift - Confirm
+# Device
+
+# English
 There's no DICOM that we are aware of. We don't have acess to EPIC DICOM.
 I apologize for using the wrong pronoun. I did not mean any disrespect.
+Hi Dr. Takita, Xueyan Lu from dosimetry. WOuld you please re-approve the plan for GLORIA VELASQUEZ. 
+Would you re-approve the plan? I'm sorry I didn't put a proper tracking point for QA. The plan is the same.
+I see you in and out.
+It (new Tx) starts at 2 pm. I just make sure you got my email.
+give me an estimate??? I can talk to him
+Please disregard last email.
+In Annia’s absence I will be handling this case. 
+This request is very time sensitive.
+There are two plans ready for review. However, if you prefer to evaluate the sum prior to approval I have sent both plans to MIM so physics can generate a plan sum. I already dropped a task for them and cc'd them on this email.
+From what I can see, Hayden and James are working on this patient. Adding them to the thread so they can provide updates.
+The family is doing their effort on their side to expedite the process
+Ask MD: The prostate is pushed up to the bladder. ... Is there any reason for that?
+The second plan for one more fx retreat is 'L CW retreatment' since the patient is still in pain. 800cGy/fx * 1 fx = 800cGy.
+This is Lu. I'm calling from University of Miami to request records for a patient that will be treated here. We have the physician-to-physician request form. 
+...Can you please let me know what the process is? Dr. Ramon F. Arguelles.The patient's name is Llanes Capote, Isabel (24055275). Last name is Capote. DOB 11/5/1951
+.. from Palmetto General? She got Radiation to the left upper lung in 2020. 
+...Provider to Provider Release of Information for Treatment Purposes
+...medical release form with the patient's signature
+I faxed two documents to you yesterday. Did you receive my fax?
+This is Lu. I'm calling from University of Miami to request records for a patient that will be treated here. I faxed two request forms on last Monday. Is there any update from the physics team? 
+..Just double check the physics team is too busy to email me or they email to a wrong address
+FRANCIS.SIMAC@USA.GENESISCARE.COM
+Good morning Dr. Freret,
+I hope you're doing well. I was wondering when you were planning to start this patient. I know you said you were going to request another MRI. I just wanted to know because I'm going to be off most of next week and I don't want anything to fall through the cracks. Please let me know. 
+I've just sent you an invite via Box with the DICOM records requested. Let me know if you have any issues or if anything else is needed. Thanks!
+If they tell you that the form is enough, then ask for the fax number. If not, just follow what they tell you to do. 
+Per Dr. Taswell, I was advised to re-simulate the patient to get replanned. 
+# English
 
 --------Plan------
 if override HU, rename the structure as HU_3888_SurgicalClips, HU_-993_BBs, etc
@@ -450,29 +489,10 @@ Eclipse - Import from MIM
 change to new or old GUI
 	click gear button at the upper right corner - Patient List Options - check/uncheck Use Classic Patient List
 
------ethos------
-use KVCBCT setup fields only, no other setup fields
-no C1_PD course, ethos print will include QA parts
-3D Ezfluence cases only: rc MLC - Remove Flattening Sequence, to make the beam as regular FFF curve shape PDD, otherwise it will be flat beams. It applies only 3D+Ezfluence+ethos cases.
-move isocenter to avoid couch collision, give a 1 cm at least margin off the couch (from the red circle)
-Y axis should <= +-6cm ???
-Couch shift limitation
-	•	For Halcyon, move the user origin closer to the treatment isocenter in the Treatment Planning System to reduce the Delta Couch Shift longitudinal value so that the Load button becomes available
-	•	The planned longitudinal Delta Couch Shift cannot exceed: 
-		o	-17.00cm (moves the couch away from the bore)
-		o	OR
-		o	+30.00cm (moves the couch further into bore) 
-		o	These limits are documented in the Halcyon and Ethos Radiotherapy System Customer Release Note
-	•	For Ethos, move the Simulation Isocenter in the Technical Structures to be within 17cm of the planned isocenter
-	example:
-		one lesion in superior: Y=-5cm; the other lesion in inferior: Y=-52cm. User origin: Y=-10cm
-		Create a new structure named Virtual_Iso_shift: put is at Y=22cm, use brush (2 cm thick, check 3D) to contour one dot in one slice.
-		Setup notes: use virtual_iso_shift as a user origin
-		Ethos report: create an OAR structure virtual_iso_shift and link it.
-		Simulation Isocenter - Edit - click square-arrow - choose virtual_iso_shift - Confirm
 
 
------electron----
+
+# electron
 Plan
 	rename the field name as 1B_Enface
 	click Field - new Block - Material code: e-cutout, check Aperture, uncheck Diverging Cut, Tray ID: CustomFFDA (choose CustomFFDA6 if A06)
@@ -509,7 +529,7 @@ Block
 	Print: BEV view - Print - CANON@Dosimetry printer - select 'Other:100cm', use a ruler to make sure the printout size is accurate
 	Cone frame with a thick side is Y2 axis ???
 Billing: 1 77295, 1 77300 Basic Dos Calc, 1 77334 Tx Devices Comp
-
+# electron
 
 -----exception planning---
 a course with two plans: MRN 20244772
@@ -554,9 +574,7 @@ Call 888-VARIAN5 - Press 2 clinical support - Press 4 treatment planning
 Explain to the varian custom service: I have a CT short at top. I'd like to duplicate slices but I don't know how. Please help me out.
 https://rs.varian.com/, input the session key that the custom service provides
 
----------------------------------------------------------------------------------------
---------------------------------------- IMPORT--------------------------------------- 
----------------------------------------------------------------------------------------
+# import images
 Import all patients if the Treatment Center (not simulate center) is in SCCC West
 	West - Import/Fuse/Volume - Available, then import it
 	West machines - CT Simulator - green checked patient, then import it
@@ -672,24 +690,22 @@ Care path - Add note for 'Drop Proton Care Path': TBD Need Volumes
 
 SRS, 4D, SBRT, ADC early late MRI prostate's fusion always go to Physicists @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
----------------------------------------------------------------------------------------
---------------------------------------- Proton ---------------------------------------
----------------------------------------------------------------------------------------
+--proton
 pLiver means proton case
 Proton cases only have CTV, GTV, not PTV at all. Plan on CTV.
+# import images
 
----------------------------------------------------------------------------------------
---------------------------------------- SBRT ---------------------------------------
----------------------------------------------------------------------------------------
+
+# SBRT
 Calculation Models: 0.125
 PTV High Resolution, GTV as well if GTV is used to be optimized too
 Every field uses SRS Arc Therapy technique
 Ring 2cm, 50% IDL should not touch outside of 2cm.
 If PTV is next to spinal cord, then SBRT max dose is 120%; otherwise 140%. Make it as hot as you can, especially for whose tx intent is ablasive
 Hotspot is in GTV, not at the border of PTV.
----------------------------------------------------------------------------------------
---------------------------------------- REVIEW ---------------------------------------
----------------------------------------------------------------------------------------
+# SBRT
+
+# Before Review
 Change Course name to C1_Prostate, prefer that Rx, Course name and plan name are the same
 PTV's type is PTV
 Change the structure's name CT structure, Clearcheck, Prescribe, Plan Check
@@ -726,10 +742,9 @@ Email MD: Title: SHNADER, SONIA 8486310, Body: Hi, the patient is ready to revie
 Clearcheck: PTV_low select PTV_low, not OPTV_low, if the max dose is over the limit, then just delete it, and delete it in the Prescription as well.
 
 **At least: 95% of PTV4005 at 100% of 4005cGy --> Eclipse: normalized at 100%-95% --> CC: V100%>95%
+# Before Review
 
----------------------------------------------------------------------------------------
---------------------------------------- WRAP UP ---------------------------------------
----------------------------------------------------------------------------------------
+# After MD Review / wrap up
 \\Client\W$\ECLIPSE PLANS\XL
 
 Delta Couch Shift Editor
@@ -852,11 +867,9 @@ Drag SCCC West - New Start VMAT/IMRT and drop it on the Print Isodose Plan
 	**Drag 'SCCC West - Special physics' (It should say ‘Physics’ not ‘Physicist’ under staff) on the Print Isodose Plan if there is.
 	rc any item - schedule - select the bottom one, schedule for all
 
+# After MD Review / wrap up
 
-
----------------------------------------------------------------------------------------
----------------------------------------WRAP UP - ETHOS-------------------------------
----------------------------------------------------------------------------------------
+# wrap up Ethos
 Print patient like normal in Eclipse. Print report/MU check. Add Tx Prep/Scheduling/Carepath/etc.
  
 1. Create patient folder in 
@@ -900,21 +913,11 @@ ECLIPSE PLANS\ETHOS\NIEVES, MARIA
 			Export Calc Results to patient folder created in PUBLIC\ArcCheck folder
 			Unzip results. Cut and paste RD and RP file. Can delete the rest of the files.
 		c) 3D plans: Just click DICOM Export to Receiver (SCP)
+# wrap up Ethos
 
 
----------------------------------------------------------------------------------------
---------------------------------------- WRAP UP - SRS -------------------------------
----------------------------------------------------------------------------------------
-insert one screenshot for each lesion
-Eclipse
-	File - export to IDENTIFY
-	File - export to MIM
-Encounter
-	OSMS (ie, IDENTIFY): mark as completed
 
----------------------------------------------------------------------------------------
---------------------------------------- replan-------------------------------
----------------------------------------------------------------------------------------
+# replan
 ----move to another machine---- pt ID: 23894074
 Copy ENT and paste as ENT_22TXD (means treated), change the fx as 22
 Copy ENT and paste as ENT_13New, change the fx as 13, rc any field - Change Treatment Units - click No??? - Select Machine; if not allowed, delete all MLCs, and then change the machine
@@ -959,8 +962,10 @@ MRN 22000013
 
 ----billing--
 If not change, check 00002-Isodose Plan - NO CHARGE
+# replan
 
----------------------------------------Hypo notes--------------------------------
+
+# Hypo note
 •	External beam cases delivering high dose radiation in 1 fraction greater than (but NOT equal to) 8Gy and that are defined as stereotactic radiosurgery (SRS) require a hypofractionation note.
 •	External beam cases delivering 2-5 treatments that are defined as stereotactic body radiation therapy (SBRT) or treatments with doses greater than (but NOT equal to) 5 Gy per fraction regardless of the technique, require a hypofractionation note.
 •	External beam cases delivering 5 Gy per fraction only require a hypofractionation note when delivered as SBRT.  Thus 25 Gy in 5 fractions delivered with standard radiation for pelvic, GI, spine and brain tumors do not require hypofractionation notes.
@@ -970,10 +975,9 @@ If not change, check 00002-Isodose Plan - NO CHARGE
 •	Final treatment plans will be reviewed at the weekly new patient conference.  Please note that because large fraction sizes are routine in the setting of brachytherapy, this policy will not apply to brachytherapy cases.
 •	Intracranial SRS performed using gammaknife or linear accelerator that has a neurosurgeon involved in the case is exempt from this policy as long as the neurosurgeon is involved in the target delineation and treatment planning.  The neurosurgeon will document his/her involvement in a note in UCHART.
 **SBRT 5Gy/fx need hypo note; IMRT 5Gy/fx doesn't need it.
+# Hypo note
 
----------------------------------------------------------------------------------------
---------------------------------------- Records Release Rotation -------------------------------
----------------------------------------------------------------------------------------
+# Records Release Rotation
 Request Patient DICOM from other hospitals
 	Physician's Order says Specical physics consult needed, Prior history of RT as MSKCC satellite in New Jersey. EQD2 calc.
 	Ask UM MD whether DICOM has been requested yet, he said no. His physician assistant gave the dsmt MSKCC MD's name and location. Dsmt googled and called the office.
@@ -1027,10 +1031,10 @@ Tuesdays-Jon
 Wednesdays- John B.
 Thursdays- Boris
 Fridays- Emma
+# Records Release Rotation
 
-------------------------------------------------------------------------------------
-------------------------------------CSI---------------------------------------
-------------------------------------------------------------------------------------
+
+# CSI
 PTV3000_Spine 95%-95%, max 110%, C3 - sacrum, has three parts:C-spine, T-spine, and L-spine
 PTV2000_Brain 95%-90%, max 110%, including brain and C1, C2?
 brainstem from prior GK
@@ -1045,11 +1049,10 @@ CSI_T/L Spine	4_Arc		15		15.0		7.5	7.5	38		-19	19
 CSI_L/S Spine	6_Arc		15		15.0		7.5	7.5	30		-11	19
 		7_Arc		345		15.0		7.5	7.5	30		-11	19
 		covering T12, L-spine, and sacrum, isocenter at the intersection of L4 and L5.
+# CSI
 
 
----------------------------------------------------------------------------------------
---------------------------------------- SRS--------------------------------------- 
----------------------------------------------------------------------------------------
+# SRS
 MRN: 20938440
 Contour
 	new structure: ALL_GTVs
@@ -1090,10 +1093,18 @@ Target labelling
 3.	Re-treating a previously treated target: X. GTV[Dose(cGy)] _[Location]^retx (e.g., re-treated 10. GTV2100 = 10. GTV2100_L Parietal^retx)
 4.	Gross tumor recurring in a resection cavity:  X. GTVsb[Dose(cGy)]_[Location]
 @Physics, when registering the MRI to the planning CT of a previously treated patient and after transferring the previous targets to the new CT, please re-label accordingly. It will simply be adding a suffix to the already labeled target with the treated date (YYYY_MM format). 
+---------------------------------------------------------------------------------------
+--------------------------------------- WRAP UP - SRS -------------------------------
+---------------------------------------------------------------------------------------
+insert one screenshot for each lesion
+Eclipse
+	File - export to IDENTIFY
+	File - export to MIM
+Encounter
+	OSMS (ie, IDENTIFY): mark as completed
+# SRS
 
-------------------------------------------------------------------------------------
-------------------------------------Ethos-------Adaptive---------------------------------------
-------------------------------------------------------------------------------------
+# Ethos Adaptive
 MRN 10365810
 Eclipse
 	crop CTSim, only leave PTV with 5 - 12 cm sup/inf area
@@ -1185,9 +1196,10 @@ Bowel_loop: very tight
 Bowel_bag: loose, big bowel bag
 GTV and CTV: MD draws them for every fx
 PTV: draw it from CTV by extending
+# Ethos Adaptive
 
 
-
-----------------------------------code----------------------
+# code
 install git in Windows command
 	winget install --id Git.Git -e --source winget
+# code
