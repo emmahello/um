@@ -1,3 +1,4 @@
+021325
 Hi Dr. Takita, Xueyan Lu from dosimetry. WOuld you please re-approve the plan for GLORIA VELASQUEZ. 
 Would you re-approve the plan? I'm sorry I didn't put a proper tracking point for QA. The plan is the same.
 I see you in and out.
@@ -11,7 +12,8 @@ From what I can see, Hayden and James are working on this patient. Adding them t
 The family is doing their effort on their side to expedite the process
 Ask MD: The prostate is pushed up to the bladder. ... Is there any reason for that?
 The second plan for one more fx retreat is 'L CW retreatment' since the patient is still in pain. 800cGy/fx * 1 fx = 800cGy.
-This is Lu. I'm calling from University of Miami to request records for a patient that will be treated here. We have Authorization for Third Party Disclosures form with the physician's signature. Also I have the physician-to-physician request form. Can you please let me know what the process is? The patient's name is Enrique Rodriguez. Last name is Rodriguez. DOB 08/03/1954 Aug 3rd 1954
+This is Lu. I'm calling from University of Miami to request records for a patient that will be treated here. We have the physician-to-physician request form. 
+...Can you please let me know what the process is? Dr. Ramon F. Arguelles.The patient's name is Llanes Capote, Isabel (24055275). Last name is Capote. DOB 11/5/1951
 .. from Palmetto General? She got Radiation to the left upper lung in 2020. 
 ...Provider to Provider Release of Information for Treatment Purposes
 ...medical release form with the patient's signature
@@ -20,23 +22,24 @@ This is Lu. I'm calling from University of Miami to request records for a patien
 ..Just double check the physics team is too busy to email me or they email to a wrong address
 FRANCIS.SIMAC@USA.GENESISCARE.COM
 Good morning Dr. Freret,
-
 I hope you're doing well. I was wondering when you were planning to start this patient. I know you said you were going to request another MRI. I just wanted to know because I'm going to be off most of next week and I don't want anything to fall through the cracks. Please let me know. 
-
+I've just sent you an invite via Box with the DICOM records requested. Let me know if you have any issues or if anything else is needed. Thanks!
 If they tell you that the form is enough, then ask for the fax number. If not, just follow what they tell you to do. 
-
+Per Dr. Taswell, I was advised to re-simulate the patient to get replanned. 
 
 UH-43D81V3 main
 UH-2KVMYS3 west
-\\Client\W$\PUBLIC\PT_Setup_pictures_West\2025\1-21-25
+\\Client\C$\XL
+\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\PUBLIC\PT_Setup_pictures_West\2025\2-3-25
+\\Client\W$\PUBLIC\PT_Setup_pictures_West\2025\2-5-25
 \\Client\W$\PUBLIC\PT_Setup_Pictures_Doral\12-26-24
 \\Client\W$\PUBLIC\PT_Setup_pictures\2024 MAIN pictures\2024-10-31
 \\Client\W$\PUBLIC\PT_Setup_pictures_Lennar\2024\2024-11-20
-W:\ECLIPSE PLANS\LXY
+W:\ECLIPSE PLANS\XL
 W:\PUBLIC\ArcCheck\2024 Patients QA\NIEVES, MARIA
-\\Client\W$\ECLIPSE PLANS\LXY
-\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\ECLIPSE PLANS\LXY
-\\client\C$\LXY
+\\Client\W$\ECLIPSE PLANS\XL
+\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\ECLIPSE PLANS\XL
+\\client\C$\XL
 mount to W drive: This PC - Map network drive - \\cgcent.miami.edu\deptshare\sccc_radonc
 V95%>=95%
 V105.0%<=10.0%
@@ -111,6 +114,8 @@ SRS: DE OLIVEIRA MARCIERI, BEATRIZ 23471221
 HN with jaw half open: GONZALEZ, MANUEL 10139847
 Different isocenter for different field and SSD setup, 3D, large volume in Edge: TEAGUE, LEIDY 24019827
 Breast w electron boost:  PORTER, NELLIE 9253435
+Prostate w LN 86/80/56: MANSO, JOSE 8587020
+
 
 ---------------------------------------------------------------------------------------
 ---------------------------------------meeting-------------------------------
@@ -222,6 +227,21 @@ Change the field size as below:
 Always put 100% lower object, such as 100% 93%Dose 80. If you put 99.5%, even put very high dose, small corner PTV could be not covered at all.
 Put 100% lower object to PTV_SCL and PTV_CW
 Put 0% upper object to PTV_CW
+
+-----Breast 3D w boost-------
+Plan name	Field name	Gantry	Colli
+old		1_Med		49	356
+old		2_LAO		6	4
+old		3_Lat		229	4
+new		1_Med		49	356
+new		2_LAO		4	4
+new		3_Lat		235	4
+CI of old is 1.46; of new is 1.35. Lung and heart are barely different.
+
+electron vs photon
+MRN: 23975359
+The conformality index was the same with new photon plan/electron plan (CI is 1.35). There was more lung/heart dose with electrons, despite slightly higher normal breast with photon new plan, we approved the new photon plan.
+BTW, electron uses 12E.
 ---------------------------------------------------------------------------------------
 ---------------------------------------Case Study ---------------------------------------
 ---------------------------------------------------------------------------------------
@@ -288,13 +308,14 @@ Reference Point (MRN: 23925817):
 
 ClearCheck & Aria report:
 Breast R: PTV_4005 (95%-95%, max<107%, V105%<10%), OAR
-Sum: PTV_4005's coverage only (95%-95%), PTV_5005's coverage (95%-95%), PTV_5005's max dose (max<107%, V105%<10%), OAR. Uncheck 'Breast_R' and 'Brst R Boost'. (Don't need to print Boost plan seperatively)
+Sum: PTV_4005's coverage only (95%-95%), PTV_5005's coverage (95%-95%), PTV_5005's max dose (max<107%, V105%<10%), OAR. Uncheck 'Breast_R' and 'Brst R Boost'. 
+	... Karen said "Don't need to print Boost plan seperatively", but Physicists want to Boost plan reports, so just print it!
 Make Plan Structure and Plan Check for Breast_R and Sum plans.
 
 Care path:
 	Drag 'SCCC West - Boost' to anywhere - Edit - change the 'Due Date' to the first Friday after the new Tx of the initial plan and before the boost Tx
 	... - add Note for 'Review Approve B...': Boost to be approved
-	... - add Note for 'Print Boost': 111524 Xueyan Lu. Boost review ETHOS
+	... - add Note for 'Print Boost': 111524 Xueyan Lu REVIEW Boost ETHOS
 
 MRN: KATSMAN, SVETLANA 23925817
 ClearCheck template:
@@ -304,6 +325,8 @@ ClearCheck template:
 Plan Sum report
 	Plan: Plan Sum
 	Constraint Template: Breast L and Breast Boost
+
+
 
 ---------------------------------------------------------------------------------------
 --------------------------------------- multiple lesions ---------------------------------------
@@ -522,6 +545,15 @@ I spoke to Varian yesterday and this will be changed in version 18, albeit poten
 split two 3D images in the same frame
 	Selection - click that series - Image - Change Patient Position - check 'Assign a new frame of reference'
 
+------duplicate CT slices----
+Drag all images to the right upper corner, select the superior image - click Image - click Duplicate - input Position z number, such as -23.5 cm (the current slice is -26.5cm), then you got a new superior image 266 
+... - drage the new image 266 to the right upper corner too - select all images including the new image - rc - new 3D Image.
+
+------varian support---
+Call 888-VARIAN5 - Press 2 clinical support - Press 4 treatment planning
+Explain to the varian custom service: I have a CT short at top. I'd like to duplicate slices but I don't know how. Please help me out.
+https://rs.varian.com/, input the session key that the custom service provides
+
 ---------------------------------------------------------------------------------------
 --------------------------------------- IMPORT--------------------------------------- 
 ---------------------------------------------------------------------------------------
@@ -585,10 +617,12 @@ Add notes:
 	Ready to plan: 0000 START TBD SBRT Needs VOLUMES
 	Print Isodose plan: 0000 START TBD SBRT Needs VOLUMES
 4DCT-Generate ITV: Dsmt takes when it becomes available
-	(Open both 0-90% series Average series - Click 0-90% series - ???) Open 4D - Select All - Setting icon - ITV Creation Options - select Deformable Propagation - highligh GTV - Create ITV - waiting propagating
-	... - Contours - Transfer All Contours - Select GTV_MD and ITV (don't select GTV created by MIM in all phases) - Current Frame - Save DICOM RTstruct - select CT1 XXX Average CT (not the one named 0-90%)
-	... then a new Modality named CT1 XXX Average CT will be created??
-	... physicists will check the ITV and then dsmt completes the activity after that??
+	Open both 0-90% series and Average series - Click 0-90% series -  click 4D - Select All (- Setting icon - ITV Creation Options - select Deformable Propagation) - highligh GTV - Create ITV - waiting propagating
+	... (two new structures generated: GTV, which is GTV in all Phase, and ITV) - rename the GTV in all Phase as GTV_All - Contours - Transfer All Contours - Select GTV_MD and ITV (don't select GTV_ALL) 
+	... 1. - Current Frame - Save DICOM RTstruct - select Average CT
+	... OR 2. - click the save icon at the top - click Save DICOM RTstruct - select Average CT - input Series Description: ITV. Done.
+	需要两次save，第一次save到0%－90%里，会出来current frame这个选项；第二次save到ave里。再加上MD画的那个RTstructure，一共三个RT structures。
+	... physicists will evaluate the ITV motion and export ITV.
 	*ITV is a single structure, while GTV has one structure for each phase (there are 10 phases in 4D)
 	----Export from MIM----
 	Documents - Motion Assessment file - it says choose Free Breathe - go to MIM - Export - select:
@@ -821,7 +855,7 @@ Drag SCCC West - New Start VMAT/IMRT and drop it on the Print Isodose Plan
 
 
 ---------------------------------------------------------------------------------------
---------------------------------------- WRAP UP - ETHOS -------------------------------
+---------------------------------------WRAP UP - ETHOS-------------------------------
 ---------------------------------------------------------------------------------------
 Print patient like normal in Eclipse. Print report/MU check. Add Tx Prep/Scheduling/Carepath/etc.
  
@@ -832,7 +866,6 @@ ECLIPSE PLANS\ETHOS\NIEVES, MARIA
 2. Send plan to W:\
 	rc the plan - Export - DICOM Media File Export Filter (From CT SIM) - Change destination to patient folder created in W drive
 	... - Uncheck everything and select only the desired course/plan
-	... - Override options: check 'Planning structure set' - Send @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 3. Log in to Ethos workspace (https://10.64.117.136/Citrix/StoreWeb/)
 	Ethos Tx Management - Search for patient by MRN - + - Add diagnosis/Region of interest/No planning directive. Next
 	Add targets (refer to Rx) - Add # of phases/Rx - Add OAR (refer to Rx)
@@ -1019,18 +1052,22 @@ CSI_L/S Spine	6_Arc		15		15.0		7.5	7.5	30		-11	19
 ---------------------------------------------------------------------------------------
 MRN: 20938440
 Contour
-	new structure: ALL_GTVs, and Brain - ALL_GTVs
+	new structure: ALL_GTVs
+		New targets: X. GTV[Dose(cGy)] [Location] where X is the number of the target, prescribed dose in cGy, and location including laterality, (e.g., “1. GTV2100_R Parietal”) 1.后面有空格
+	new structure: Brain - ALL_GTVs
 	convert all of GTVs or PTV into high resolution segment (if OAR overlapps with PTV, then convert the OAR into high resolution too, otherwise the margin such as 'PTV - Brainstem - 0.2 cm' won't be accute.
 	insert two couches: SRS Support, and encompass support
 	crop BODY from couch with 0.1 cm margin
 	new structure Wire
 		Modify BODY with removing wires - contour ears into BODY - new structure WIRE - change W/L to black and white only - change VOI - Image Thresholding - select all white ranges - apply 
 		... - crop wires from inside of BODY
+		Wire_HU_-993
 	new structure named BODY_IDENTIFY = BODY (crop wire out) + NS_WIRE
 
 External Beam Planning - Insert - New HyperArc Plan - C1_FSRT_HA - select Rx 'FSRT_HA:R0 [draft]' - check the highest one if multiple PTV - select the PTV with the highest dose - ... - Select Target Structures ([+] 1. GTV2700_brain, 
 ... [-] 2. GTV2700_LeftXX, [+] 3. PTV2700_LeftXX, [+] 4. GTV2700_RCB - uncheck the couch 90 degree due to no lesion is close the superior of skull
 	Optimize
+		Calculation: 0.125
 		NTO: Auto (SRS NTO): 100
 		uncheck GPU
 		All GTV or PTV: 100%, 2700cGy, 100 from start, finally Hayden put as below:
@@ -1042,13 +1079,13 @@ Rx: always add surface guided imaging device (pre tx and every tx) and CBCT (pre
 
 Report
 	Aria report: In 'Plan Evaluation Indices', insert a screenshot of all PTVs and GTVs that are in Rx in the Dose Statistics.
-	Export to Identify and RadCalc
+	Export to Identify, RadCalc and MIM
 	RadCalc: change BODY to 1.1 or 1.2 due to skull density
 	New a hypofractionation Co-Sign Note, Author by radiologist, Supervised by neurosurgeon (find the neurosurgeon's name in the physician's order, if not the full name, then google it)
 		Fill in the blank: Region Treated: Brain, Dose: 2700cGy, Fractions: 3. Leave the C1_PD. It's fine.
 
 Target labelling
-1.	New targets: X. GTV[Dose(cGy)] [Location] where X is the number of the target, prescribed dose in cGy, and location including laterality, (e.g., “1. GTV2100_R Parietal”)
+1.	New targets: X. GTV[Dose(cGy)] [Location] where X is the number of the target, prescribed dose in cGy, and location including laterality, (e.g., “1. GTV2100_R Parietal”) 1.后面有空格
 2.	Previously treated targets: X. GTV[Dose]^tx’d_date (e.g., X. GTV[Dose]^YYYY_MM)
 3.	Re-treating a previously treated target: X. GTV[Dose(cGy)] _[Location]^retx (e.g., re-treated 10. GTV2100 = 10. GTV2100_L Parietal^retx)
 4.	Gross tumor recurring in a resection cavity:  X. GTVsb[Dose(cGy)]_[Location]
