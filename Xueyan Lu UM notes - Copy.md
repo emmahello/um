@@ -6,7 +6,7 @@ BH, ETHOS, every other day,
 UH-43D81V3 main
 UH-2KVMYS3 west
 \\Client\C$\XL
-\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\PUBLIC\PT_Setup_pictures_West\2025\2-17-25
+\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\PUBLIC\PT_Setup_pictures_West\2025\2-13-25
 \\Client\W$\PUBLIC\PT_Setup_pictures_West\2025\2-5-25
 \\Client\W$\PUBLIC\PT_Setup_Pictures_Doral\12-26-24
 \\Client\W$\PUBLIC\PT_Setup_pictures\2024 MAIN pictures\2024-10-31
@@ -202,7 +202,7 @@ I've just sent you an invite via Box with the DICOM records requested. Let me kn
 If they tell you that the form is enough, then ask for the fax number. If not, just follow what they tell you to do. 
 Per Dr. Taswell, I was advised to re-simulate the patient to get replanned. 
 "Two cents" is an idiom that means to share an opinion, even if it's not asked for or considered important. eg: "If I may put my two cents in, that hat doesn't do you any favors". 
-How would you prefer to be addressed?/ What name would you like us to use? / I apologize for using the wrong pronoun. I did not mean any disrespect.
+
 
 
 # Plan
@@ -471,16 +471,6 @@ HN patient MRN: 10139847
 2_ARC 10	15.0 7.5 7.5
 3_ARC 90	14.2 -0.5 13.7	-- it only covers PTV6600 and part of PTV5940 and parotid areas, not cover full of PTV5445.
 
----from Boris---
-large IMRT case:
-NTO: 100, 0.3, 95%,50%, 0.5
-CTV2000 100% 2020 200
-PTV2000 0% 2100 200
-		100% 2020 200
-		99% 2020 200
-		98% 2020 200
-OAR priority 100 by default
-
 -----VMAT Breast w LN----
 DANIA, MRN: 21665995
 Four half arcs
@@ -597,8 +587,7 @@ Field X size for large volumes
 			same
 		insert a plan sum and ask MD to approve it.
 
-#### 3D for large volumes in Linac A w/o jaw tracking
-in ezfluence, use 'Generate Field in Field' instead of 'export fluence'. Then merge all subfields. If some fields that can't be merged have very little MU (such as MU<7), then just delete them manually. You plan may not be as good as the one in fluence but should be fine.
+
 ## PLANNING TIPS
 #### 与PET blend看enhancement
 Pt - View - View Parameter - hot iron - Save
@@ -718,7 +707,7 @@ UM uses brass bolus.
 
 ### 3D
 1. 3D T Spine
-10X, gantry: 180, 140, 220. Spare kidney. 95%-97%, hotspot 108%
+10X, gantry: 180, 140, 220. Spare kidney. 95%-97%, hotspot 108%。 If 6xfff, then use 0.5cm margin.
 2. 3D Acetabulume
 15X, AP/PA, AP:PA=1:2 to avoid the bowel at anterior, 
 3. 3D R iliac
@@ -726,9 +715,7 @@ UM uses brass bolus.
 
 4. 3D whole brain
 May need to edit fluence to reduce lens dose, to keep it max < 7 Gy. Using Decrease Transmission Factor (brush size 0.4 cm, Transmission Factor 0.3)
-## Tools
-### Clearcheck
-CI=, 0.8,1.2
+
 # import images
 Import all patients if the Treatment Center (not simulate center) is in SCCC West
 	West - Import/Fuse/Volume - Available, then import it
