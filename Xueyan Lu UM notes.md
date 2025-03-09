@@ -707,7 +707,7 @@ UM uses brass bolus.
 
 ### 3D
 1. 3D T Spine
-10X, gantry: 180, 140, 220. Spare kidney. 95%-97%, hotspot 108%
+10X, gantry: 180, 140, 220. Spare kidney. 95%-97%, hotspot 108%。 If 6xfff, then use 0.5cm margin.
 2. 3D Acetabulume
 15X, AP/PA, AP:PA=1:2 to avoid the bowel at anterior, 
 3. 3D R iliac
