@@ -6,12 +6,12 @@ BH, ETHOS, every other day,
 UH-43D81V3 main
 UH-2KVMYS3 west
 \\Client\C$\XL
-\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\PUBLIC\PT_Setup_pictures_West\2025\2-17-25
-\\Client\W$\PUBLIC\PT_Setup_pictures_West\2025\2-5-25
+\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\PUBLIC\PT_Setup_pictures_West\2025\4-8-25
+\\Client\W$\PUBLIC\PT_Setup_pictures_West\2025\4-8-25
 \\Client\W$\PUBLIC\PT_Setup_Pictures_Doral\12-26-24
-\\Client\W$\PUBLIC\PT_Setup_pictures\2024 MAIN pictures\2024-10-31
+\\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\ECLIPSE PLANS\XL
 \\Client\W$\PUBLIC\PT_Setup_pictures_Lennar\2024\2024-11-20
-W:\ECLIPSE PLANS\XL
+W:\ECLIPSE PLANS\XL.
 W:\PUBLIC\ArcCheck\2024 Patients QA\NIEVES, MARIA
 \\Client\W$\ECLIPSE PLANS\XL
 \\cgcent.miami.edu\DEPTSHARE\SCCC_Radonc\ECLIPSE PLANS\Ethos Adaptive\Shoemaker, Sheryl_IM105\Shoemaker, Sheryl_IM105
@@ -22,8 +22,13 @@ V105.0%<=10.0%
 Dmax<=150%
 Dmin>=90.0%
 V100%>=95%
-Ursula Hennings
+Supine, black mat, #2+pillow, #7 under knees, arms on chest ddddddddddddddddddddd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      
+3/4
+Ethos
+
+
 Prostate_012425 MRI
 pending
 Scan Series
@@ -54,6 +59,7 @@ Reference points
 Dose rate
 ClearCheck
 F4
+assign air -993 to wire and BB!!!!!!!!!!!!!!!!!
 @@@@@@@@@@@@@@sending to Physicist:
 ClearCheck report / RadCalc report
 F4
@@ -93,6 +99,7 @@ Different isocenter for different field and SSD setup, 3D, large volume in Edge:
 Breast w electron boost:  PORTER, NELLIE 9253435
 Prostate w LN 86/80/56: MANSO, JOSE 8587020
 Prostate w LN 86/80/72/68/56 in Edge w two isocenters, using autocrop : BORDON FUNDORA, ROBERTO 20254084
+Banegas Ramlochan, Chrissye (21347294)  EQD2 QUANTEC PLAN SUM
 
 # meeting 
 Proton: Jonathan, Boris, Hayden
@@ -103,6 +110,7 @@ DFB: Mike and Andrew
 WEST inpatient stay at west if < 10 fractions (for replan cases)
 Plantation 2 dosimetrists April 14 2025
 Sole Mia 3 dosimetrists June 17 2025
+West new policy: IMRT 5 days, 3D 3 days, SRS can be one day and have the highest priority, HN cases could be short time too. 
 
 
 # MD
@@ -206,6 +214,22 @@ How would you prefer to be addressed?/ What name would you like us to use? / I a
 
 
 # Plan
+## tips
+If two lesions are away more than 5 cm (either in the sup/inf direction or in the same plane), mostly use two isocenters instead of one. Since two lesions can move independently, if you put isocenter in between, the patient might not be positioned properly and could shift quite a bit. throwing the lesions off.
+	if two lesions in two sides, one in the left lung, the other in the right lung, then use two half arcs for each lung.
+	if two lesions in the same sides, 5 cm away, then evaluate which situation give you a better plan. They might fit in the same isocenter. If using two isocenter, you need to take into account the contribution from the other one, and make a plan sum after.
+Try to avoid beam going through hardware because hardware sucks most of the beams.
+If you can't meet 100% ISL at 95% tgt, then use 95% ISL at 95% tgt (or 97% tgt, or as much as you can) for PTV, then use 99% ISL at 95% or 97% of tgt for GTV!
+Spine SBRT
+	SpinalCord constraints: max<2220cGy; V1800cGy<0.03cc
+	ring: 0.8cm /-0.3cm of the spinal cord. zCool = ring&PTV, zCool: 0%, 2900cGy, 70. PTV: 100% 2700cGy 120; 0% 3300cGy 70. 
+Thigh_lesion near knee
+	OAR: Femur, Knee joint, skin strip (6cm width, 0.7-1.3cm deep, 3 cm more at sup/inf of PTV)
+Two close lesions
+	create a new structure named _bridge, put 0% 50%IDL 50 (compared with 100 for PTV's priority)
+## 3D
+humerus: AP/PA, with collimator angles
+Pelvic bones and Hip: LAO 40 degree and LPO 170 degree. Just two fields.
 ## w Boost
 Ethos:
 Add two phases when print the initial plan:
@@ -316,6 +340,7 @@ Ethos doesn't have jaw so don't bother to set Field Y1 and Y2.
 ## SRS
 MRN: 23385253 ROMERO many courses
 MRN: 20938440
+@@@@@@@@@ 10FFF in west, 6FFF (some will use 10FFF too) in main. Penumbra only is a concern in low dose spillage, which is not important in SRS cases.
 Contour
 	new structure: ALL_GTVs
 		New targets: X. GTV[Dose(cGy)] [Location] where X is the number of the target, prescribed dose in cGy, and location including laterality, (e.g., “1. GTV2100_R Parietal”) 1.后面有空格
@@ -574,6 +599,7 @@ Field X size for large volumes
 	Arc_2		330		15		7.5	7.5	22		cover lateral
 	Arc_3		90		15		-15	0	22		cover superial
 	Arc_4		90		15		0	15	22		cover inferior
+	Edge 22cm, if lesion is larger than 22cm, two isocenters are used. Plan with four arcs (two isocenters). When finished, separate into two plans (one isocenter each).
 
 #### 3D for large volumes on Edge
 	AP and PA
@@ -598,6 +624,10 @@ Field X size for large volumes
 		insert a plan sum and ask MD to approve it.
 
 #### 3D for large volumes in Linac A w/o jaw tracking
+#### 3D conformal arc
+rc Field - Technique: Arc Therapy, Gantry Rtn: 181 degree, Stop Angle: 179 degree
+rc MLC - Properties - Technique: Arc Dynamic; Angle step: 1 degree
+
 in ezfluence, use 'Generate Field in Field' instead of 'export fluence'. Then merge all subfields. If some fields that can't be merged have very little MU (such as MU<7), then just delete them manually. You plan may not be as good as the one in fluence but should be fine.
 ## PLANNING TIPS
 #### 与PET blend看enhancement
@@ -605,6 +635,7 @@ Pt - View - View Parameter - hot iron - Save
 File - open - plan - click CTSim - click Registered Images - rc PET images - Blend with CTSim
 usually check volumes for SBRT lung and conventional HN cases before you plan.
 #### SBRT
+learn from Ethos: default ring in Ethos is 1.7/0.3cm
 Calculation Models: 0.125
 PTV High Resolution, GTV as well if GTV is used to be optimized too
 Every field uses SRS Arc Therapy technique
@@ -718,7 +749,7 @@ UM uses brass bolus.
 
 ### 3D
 1. 3D T Spine
-10X, gantry: 180, 140, 220. Spare kidney. 95%-97%, hotspot 108%
+10X, gantry: 180, 140, 220. Spare kidney. 95%-97%, hotspot 108%。 If 6xfff, then use 0.5cm margin.
 2. 3D Acetabulume
 15X, AP/PA, AP:PA=1:2 to avoid the bowel at anterior, 
 3. 3D R iliac
@@ -726,6 +757,13 @@ UM uses brass bolus.
 
 4. 3D whole brain
 May need to edit fluence to reduce lens dose, to keep it max < 7 Gy. Using Decrease Transmission Factor (brush size 0.4 cm, Transmission Factor 0.3)
+	1. superior/posterior: flash skin at cranium by 2 cm. check Body, field size is 2cm away from skin (not the skull)
+	2. Inferior: the bottom of field is at C2/C3 for posterior cranial fossa disease/LMD, otherwise C1/C2 border. 
+	3. Anterior: block lens/anterior orbits. Verify coverage of cribriform plate and middle cranial fossa on cross-sectional imaging
+	4. Multiple techniques can be utilized to avoid optic lenses (eg. rotate gantry 5 degrees and tx w RAO/LAO tech), then FiF.
+	5. Edit fluence if needed: click Decrease xxx - Brush size: 0.5cm, Transmission Factor: 0.02 - Apply - Calc
+Boris: 100% - 95%, make sure the brain tissue near frontal sinus (superior of nose) are well covered as well.
+
 ## Tools
 ### Clearcheck
 CI=, 0.8,1.2
@@ -856,6 +894,7 @@ Proton cases only have CTV, GTV, not PTV at all. Plan on CTV.
 ## import images tips
 MRI: Dr. Rich: Notice that the full name of the sequence is "T1 MPRAGE POST". The "post" means after contrast administration. If they did the sequence before IV contrast administration it would be "T1 MPRAGE". For my cases, please grab the "T1 MPRAGE POST" 
 Bladder cancer: use the empty bladder scan, autocontour on it and fuse images to it, rather than the full bladder scan
+By default, T1? if Flair, then T2 for edema?
 
 # Review
 ## Before Review
@@ -1065,7 +1104,7 @@ ECLIPSE PLANS\ETHOS\NIEVES, MARIA
 			Export Calc Results to patient folder created in PUBLIC\ArcCheck folder
 			Unzip results. Cut and paste RD and RP file. Can delete the rest of the files.
 		c) 3D plans: Just click DICOM Export to Receiver (SCP)
-
+8. Add a lert: Planning Directive > Monitor > Click on the alert icon > select the section and add the comment. 
 
 
 ## Hypo note
@@ -1140,10 +1179,19 @@ MRN 22000013
 ----billing--
 If not change, check 00002-Isodose Plan - NO CHARGE
 
+### label
+@@@@@@@@label: initial, V1,V2,V3; inpatients V1_ETHOS, V2_Edge
+Each replan or revised plan will include 'V' (version) at the end:    Prostate V1, Prostate V2, Prostate V3, etc.
+Inpatient plans at the West location will also include the name of the linac:  Prostate_EdgeV1, Prostate_ETHOSV1, Prostate_ETHOSV2, etc.
+Plans for prior delivered fractions, which is used to build the Plan SUM, will include the number of fractions previously delivered at the end and will be rejected:  Prostate_10FX, Prostate_15FX (rejected), etc.
+Plan SUM:  Plans within the same course will be labeled using the plan name + 'SUM' (e.g., initial Prostate_13FX (rejected) + Prostate V1):  Prostate_SUM
+Plan Sum for different courses will be labeled using the course numbers + 'Sum ' (e.g., Sum for all courses from C1, C2, C3): C1_C2_C3_SUM
+ 
 
 
 
 # Records Release Rotation
+Lu is responsible for April, July, Oct
 Request Patient DICOM from other hospitals
 	Physician's Order says Specical physics consult needed, Prior history of RT as MSKCC satellite in New Jersey. EQD2 calc.
 	Ask UM MD whether DICOM has been requested yet, he said no. His physician assistant gave the dsmt MSKCC MD's name and location. Dsmt googled and called the office.
@@ -1204,10 +1252,16 @@ Fridays- Emma
 MRN 10365810
 24042953
 23941778 IM109 is good but low dose 50% IDL not conformal.
+
+@@@@@@@@@@@@@@You need one rt intent per plan, and one empty course per RT intent.
+@@@@@@@@@@@@@@Don’t click the click the SCP button.  Unless, it is for adaptive. 
+@@@@@@@@@@@@@@@@For adaptive we do need to click the scp button.  Just make sure that the aria option / checkbox is not selected.
+
 Eclipse
 	crop CTSim, only leave PTV with 5 - 12 cm sup/inf area
 		In Selection, highligh image Series ID - Change Patient Position - check 'Assign a new frame of reference' (keep original patient position) - OK
-		... - Drag the new series - Delete superior images and inferior images - rc on any of the images in gallery and select New 3D image named Pelvis_122624_Cr
+		... - Drag the new series - DELETE superior images and inferior images (@@@@@@@@@@@@@@@@@ Use delete, not close!!!! otherwise the new series won't pop up in Ethos image selection) 
+		... - rc on any of the images in gallery and select New 3D image named Pelvis_122624_Cr
 		... - Fuse the images of the old one to the new one (check the option 'register based on DICOM origin') and copy the structures over (if a window prompted with asking about Body, click skip)
 	check MRI fusion and PET fusion, decide both of them are helpful and will drag them later in ethos (Do not need to register MRI or PET to the new one)
 	check how many margin of PTV from CTV: 3mm
@@ -1215,7 +1269,7 @@ Ethos
 	Page 31. select correct tx region according to OARs in Rx, very important due to enfluences.
 	check 'Adaptive Treatment'
 	Delete useless OAR but not Bones due to high density, and not delete Body as well
-	Add OARs CaudaEquina and PenileBulb since they are in eclipse's OAR structures. DO NOT use 'General ?? Tissue' but use the correct structures such as CaudaEquina
+	Add OARs CaudaEquina and PenileBulb since they are in eclipse's OAR structures. DO NOT use 'General healthy Tissue' but use the correct structures such as CaudaEquina; Use 'General healthy Tissue' for structures like 'Kidney L - CTV' @@@@@@@@@@@@@@@@@@@
 	Contours
 		rc the down arrow button of PTV3000_LN - 'Change Auto Margin/Combination...' - click Combination - check CTV3500_LN, fill 0.3cm at margin - click the sigma botton
 		Fix all alarms, such as:
@@ -1223,6 +1277,9 @@ Ethos
 			2. bladder misses some slices (click Bladder - clike brush icon - rc - select Static Brush - contour missing bladder)
 		Attach PTV and OARs
 		DO NOT attach Body, because we use the one generated by Ethos not by Aria.
+	Click three dot at the right corner - save the template "Sumbmit Planning Directives as Template..."
+	Click gear icon at the right corner - Manage Tempaltes: once you publish a template, you can select it while you plan
+	Assign an Aria course to the Ethos RT Intent: click the calculator icon at the right corner - select the course_ID in Aria.
 	Dose Preview
 		click Dose Preview - click Refine Dose
 		Organ		Rx			Goal in Ethos	Variation in Ethos
@@ -1253,7 +1310,7 @@ After MD approval in Ethos
 Ethos
 	Plan Report - check and let physics know if any warning or error - if not, click Export Report - Save to W:\ECLIPSE PLANS\Ethos Adaptive\Rubin, Israel_IM109 @@@@@@@@@@@@@@@@@@@@@@@@@@
 	... - name as Plan Report IM109 this is equivelant to the Treatment Plan report
-	click DICOM Export to File - save in to W:\ECLIPSE PLANS\Ethos Adaptive\Rubin, Israel_IM109.zip @@@@@@@@@@@@@@@@@@@@
+	click DICOM Export to File - save in to W:\ECLIPSE PLANS\Ethos Adaptive\Rubin, Israel_IM109.zip, and unzip @@@@@@@@@@@@@@@@@@@@
 	click DICOM Export to Receiver (SCP) - ... - Calculate - save the zip in W:\Public\ArcCheck\2025 Patient QA\Reynoso, Omar IM109_QA, unzip and leave RD and RP files.
 Mobius3D (equivelant to RadCalc)  @@@@@@@@@@@@@@@@@@@@@@
 	10.64.80.211
@@ -1298,9 +1355,15 @@ Rectum
 Femur"
 
 Bowel_loop: very tight
-Bowel_bag: loose, big bowel bag
+Bowel_Bag: loose, big bowel bag
 GTV and CTV: MD draws them for every fx
 PTV: draw it from CTV by extending
+## Ethos Boost case
+plan in Ethos like normal
+Export the Ethos plan by clicking 'DICOM Export to File', unzip, and import the folder in Eclipse, insert a plan sum, change Dose level, print the plan sum report.
+Send review email to MD
+In Eclipse, make a new course named "C1_ETHOS_Bst"; In Ethos, assign this ARIA course to the Ethos RT intent.
+
 
 ## Technical Plan Report
 If the mean dose of PTV is 125% of the PTV Rx dose, then it gives a warning;
